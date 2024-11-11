@@ -1,0 +1,53 @@
+﻿<UserControl x:Class="WindowsStoreClone.UserControls.TopApps"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:WindowsStoreClone.UserControls"
+             mc:Ignorable="d"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.25*" />
+            <ColumnDefinition Width="0.25*" />
+            <ColumnDefinition Width="0.25*" />
+            <ColumnDefinition Width="0.25*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.33*" />
+            <RowDefinition Height="0.33*" />
+            <RowDefinition Height="0.33*" />
+        </Grid.RowDefinitions>
+        <Image Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Grid.ColumnSpan="3"
+               VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Stretch="Fill"
+               Source="/Images/TopAppIcons/81-tropical.png" Margin="2" MouseUp="Image_OnMouseUp" />
+
+        <Image x:Name="TopImage" Grid.Row="0" Grid.Column="3"
+               VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Stretch="Fill"
+               Source="/Images/TopAppIcons/82-circus fun.png" Margin="2" MouseUp="Image_OnMouseUp" />
+        <Image x:Name="MiddleImage" Grid.Row="1" Grid.Column="3"
+               VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Stretch="Fill"
+               Source="/Images/TopAppIcons/83-Race extreme.png" Margin="2" MouseUp="Image_OnMouseUp" />
+        <Image x:Name="BottomImage" Grid.Row="2" Grid.Column="3"
+               VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Stretch="Fill"
+               Source="/Images/TopAppIcons/84-chat message.png" Margin="2" MouseUp="Image_OnMouseUp" />
+
+        <Grid x:Name="BottomGrid" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.5*" />
+                <ColumnDefinition Width="0.5*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.5*" />
+                <RowDefinition Height="0.5*" />
+            </Grid.RowDefinitions>
+            <Button x:Name="TopAppsButton" FontSize="18" Grid.Row="0" Grid.Column="0" Margin="2" Content="Top Apps" />
+            <Button x:Name="TopAppsButton2" FontSize="18" Grid.Row="0" Grid.Column="1" Margin="2" Content="Features" />
+            <Button x:Name="TopAppsButton3" FontSize="18" Grid.Row="1" Grid.Column="0" Margin="2" Content="Top Games" />
+            <Button x:Name="TopAppsButton4" FontSize="18" Grid.Row="1" Grid.Column="1" Margin="2" Content="Collections" />
+        </Grid>
+        <Image Grid.Row="2" Grid.Column="2"
+               VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Stretch="Fill"
+               Source="/Images/TopAppIcons/85-Night castle.png" Margin="2" MouseUp="Image_OnMouseUp" />
+    </Grid>
+</UserControl>

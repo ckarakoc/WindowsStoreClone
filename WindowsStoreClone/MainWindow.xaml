@@ -4,9 +4,16 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WindowsStoreClone"
+        xmlns:uc="clr-namespace:WindowsStoreClone.UserControls"
+        xmlns:pg="clr-namespace:WindowsStoreClone.Pages"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="800" Width="1350"
+        Name="MainWindowMetro">
     <Grid>
-
+        <Frame x:Name="MainFrame" Margin="5"
+               Loaded="MainFrame_OnLoaded"
+               NavigationUIVisibility="Hidden"
+               Width="{Binding ElementName=MainWindowMetro, Path=ActualWidth}"
+               Height="{Binding ElementName=MainWindowMetro, Path=ActualHeight}" />
     </Grid>
 </Window>
