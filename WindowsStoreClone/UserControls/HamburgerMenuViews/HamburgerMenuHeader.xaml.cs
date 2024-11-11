@@ -21,12 +21,12 @@ public partial class HamburgerMenuHeader : UserControl
     private void SortBy_MenuItem_Click(object sender, RoutedEventArgs e)
     {
         SortByLabel.Content = (sender as MenuItem).Header.ToString();
-        FilterMenuItemClicked(sender, e);
+        SortByMenuItemClicked(sender, e);
     }
 
     private void Filter_MenuItem_Click(object sender, RoutedEventArgs e)
     {
         FilterByTypeLabel.Content = (sender as MenuItem).Header.ToString();
-        SortByMenuItemClicked(sender, e);
+        FilterMenuItemClicked(sender, e);
     }
 }

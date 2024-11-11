@@ -12,7 +12,7 @@ public partial class AllOwned : UserControl
         HamHeader.SortByMenuItemClicked += HamHeader_SortByMenuItemClicked;
     }
 
-    private void HamHeader_SortByMenuItemClicked(object sender, RoutedEventArgs e)
+    private void HamHeader_FilterMenuItemClicked(object sender, RoutedEventArgs e)
     {
         if ((sender as MenuItem).Header.ToString().ToLower() == "all types")
         {
@@ -24,7 +24,7 @@ public partial class AllOwned : UserControl
         }
     }
 
-    private void HamHeader_FilterMenuItemClicked(object sender, RoutedEventArgs e)
+    private void HamHeader_SortByMenuItemClicked(object sender, RoutedEventArgs e)
     {
         if ((sender as MenuItem).Header.ToString().ToLower() == "sort by name")
         {
