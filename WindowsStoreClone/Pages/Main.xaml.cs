@@ -16,6 +16,10 @@ public partial class Main : Page
 
     public event OnTopAppButtonClicked TopAppButtonClicked;
 
+    public delegate void OnDownloadsAndUpdatesClicked();
+
+    public event OnDownloadsAndUpdatesClicked DownloadsAndUpdatesClicked;
+
     public Main()
     {
         InitializeComponent();
@@ -40,6 +44,13 @@ public partial class Main : Page
         MostPopularAppViewer.AppClicked += AnAppClicked;
         FreeAppsViewer.AppClicked += AnAppClicked;
         GamesAppViewer.AppClicked += AnAppClicked;
+        
+        RightHeaderButtons.HeaderRightButtonsDownloadButtonClick += RightHeaderButtons_HeaderRightButtonsDownloadButtonClick;
+    }
+
+    private void RightHeaderButtons_HeaderRightButtonsDownloadButtonClick(object sender, RoutedEventArgs e)
+    {
+        DownloadsAndUpdatesClicked();
     }
 
     private void TopApps_TopAppButtonClicked(object sender, RoutedEventArgs e)

@@ -5,6 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:local="clr-namespace:WindowsStoreClone.Pages"
       xmlns:uc="clr-namespace:WindowsStoreClone.UserControls"
+      xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
       mc:Ignorable="d" d:DesignWidth="1350" d:DesignHeight="800"
       Title="Main">
     <Grid x:Name="MainWindowMainGrid">
@@ -18,9 +19,9 @@
             <ColumnDefinition Width="0.4*" />
             <ColumnDefinition Width="35" />
         </Grid.ColumnDefinitions>
-        <TabControl x:Name="MainTabControl" Visibility="Visible"
-                    Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="2"
-                    ClipToBounds="True">
+        <mah:MetroAnimatedSingleRowTabControl x:Name="MainTabControl" Visibility="Visible"
+                                              Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="2"
+                                              ClipToBounds="True">
             <TabItem Header="Home" x:Name="HomeTab">
                 <ScrollViewer x:Name="MainScrollViewer"
                               HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"
@@ -98,7 +99,7 @@
                                    Width="{Binding ElementName=MainTabControl, Path=ActualWidth}" />
                 </StackPanel>
             </TabItem>
-        </TabControl>
+        </mah:MetroAnimatedSingleRowTabControl>
         <uc:HeaderRightButtons x:Name="RightHeaderButtons" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="1" />
     </Grid>
 </Page>

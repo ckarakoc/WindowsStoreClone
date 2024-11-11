@@ -6,6 +6,7 @@
       xmlns:local="clr-namespace:WindowsStoreClone.Pages"
       xmlns:uc="clr-namespace:WindowsStoreClone.UserControls"
       xmlns:ucappdet="clr-namespace:WindowsStoreClone.UserControls.AppDetailsTabContent"
+      xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
       mc:Ignorable="d"
       d:DesignHeight="450"
       d:DesignWidth="800"
@@ -27,7 +28,7 @@
                     <ColumnDefinition Width="0.70*"></ColumnDefinition>
                     <ColumnDefinition Width="0.15*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <TabControl Name="AppDetailsTabControl" Grid.Column="1" HorizontalAlignment="Stretch">
+                <mah:MetroAnimatedSingleRowTabControl Name="AppDetailsTabControl" Grid.Column="1" HorizontalAlignment="Stretch">
                     <TabItem Header="Overview">
                         <ucappdet:Overview x:Name="OverviewTabUC" />
                     </TabItem>
@@ -40,7 +41,7 @@
                     <TabItem Header="Related">
                         <ucappdet:Related x:Name="RelatedTabUC" />
                     </TabItem>
-                </TabControl>
+                </mah:MetroAnimatedSingleRowTabControl>
             </Grid>
         </StackPanel>
     </ScrollViewer>

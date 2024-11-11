@@ -8,6 +8,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MahApps.Metro.Controls;
 using WindowsStoreClone.Pages;
 using WindowsStoreClone.UserControls;
 
@@ -16,10 +17,13 @@ namespace WindowsStoreClone;
 /// <summary>
 /// Interaction logic for MainWindow.xaml
 /// </summary>
-public partial class MainWindow : Window
+public partial class MainWindow : MetroWindow
 {
     private Main MainWindowContentPage;
     private TopAppsWrapped MyTopAppsWrappedPage;
+    private DownloadsAnUpdates DownloadsAnUpdatesPage;
+
+    private MetroWindow accentThemeTestWindow;
 
     public MainWindow()
     {
@@ -28,10 +32,19 @@ public partial class MainWindow : Window
         MainWindowContentPage.AppClicked += MainWindowContentPage_AppClicked;
         MainWindowContentPage.TopAppButtonClicked += MainWindowContentPage_TopAppButtonClicked;
         // MainWindowContentPage.TopAppButtonClicked += (_, _) => MainFrame.Content = MyTopAppsWrappedPage;
+        MainWindowContentPage.DownloadsAndUpdatesClicked += MainWindowContentPage_DownloadsAndUpdatesClicked;
 
         MyTopAppsWrappedPage = new TopAppsWrapped();
         MyTopAppsWrappedPage.AnAppClicked += MainWindowContentPage_AppClicked;
         MyTopAppsWrappedPage.BackButtonClicked += BackButtonClicked;
+
+        DownloadsAnUpdatesPage = new DownloadsAnUpdates();
+        DownloadsAnUpdatesPage.BackButtonClicked += BackButtonClicked;
+    }
+
+    private void MainWindowContentPage_DownloadsAndUpdatesClicked()
+    {
+        MainFrame.Content = DownloadsAnUpdatesPage;
     }
 
     private void MainWindowContentPage_TopAppButtonClicked(object sender, RoutedEventArgs e)
@@ -56,5 +69,9 @@ public partial class MainWindow : Window
     {
         if (MainFrame.NavigationService.CanGoBack)
             MainFrame.NavigationService.GoBack();
+    }
+
+    private void ChangeAppStyleButtonClick(object sender, RoutedEventArgs e)
+    {
     }
 }
