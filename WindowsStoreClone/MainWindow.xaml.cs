@@ -19,32 +19,42 @@ namespace WindowsStoreClone;
 public partial class MainWindow : Window
 {
     private Main MainWindowContentPage;
+    private TopAppsWrapped MyTopAppsWrappedPage;
 
     public MainWindow()
     {
         InitializeComponent();
         MainWindowContentPage = new Main();
         MainWindowContentPage.AppClicked += MainWindowContentPage_AppClicked;
+        MainWindowContentPage.TopAppButtonClicked += MainWindowContentPage_TopAppButtonClicked;
+        // MainWindowContentPage.TopAppButtonClicked += (_, _) => MainFrame.Content = MyTopAppsWrappedPage;
+
+        MyTopAppsWrappedPage = new TopAppsWrapped();
+        MyTopAppsWrappedPage.AnAppClicked += MainWindowContentPage_AppClicked;
+        MyTopAppsWrappedPage.BackButtonClicked += BackButtonClicked;
+    }
+
+    private void MainWindowContentPage_TopAppButtonClicked(object sender, RoutedEventArgs e)
+    {
+        MainFrame.Content = MyTopAppsWrappedPage;
     }
 
     private void MainWindowContentPage_AppClicked(AnApp sender, RoutedEventArgs e)
     {
         AppDetails myAppDetails = new AppDetails(sender);
-        myAppDetails.BackButtonClicked += myAppDetails_BackButtonClicked;
+        myAppDetails.BackButtonClicked += BackButtonClicked;
         myAppDetails.AppClicked += MainWindowContentPage_AppClicked;
         MainFrame.Content = myAppDetails;
-    }
-
-    private void myAppDetails_BackButtonClicked(object sender, RoutedEventArgs e)
-    {
-        if (MainFrame.NavigationService.CanGoBack)
-        {
-            MainFrame.NavigationService.GoBack();
-        }
     }
 
     private void MainFrame_OnLoaded(object sender, RoutedEventArgs e)
     {
         MainFrame.Content = MainWindowContentPage;
+    }
+
+    private void BackButtonClicked(object sender, RoutedEventArgs e)
+    {
+        if (MainFrame.NavigationService.CanGoBack)
+            MainFrame.NavigationService.GoBack();
     }
 }

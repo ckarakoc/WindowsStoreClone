@@ -1,0 +1,67 @@
+﻿<UserControl x:Class="WindowsStoreClone.UserControls.HeaderRightButtons"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:WindowsStoreClone.UserControls"
+             mc:Ignorable="d"
+             d:DesignHeight="40"
+             d:DesignWidth="198"
+             Name="HeaderRightButtonsUserControl"
+             Height="40">
+    <StackPanel
+        Orientation="Horizontal"
+        HorizontalAlignment="Right"
+        Grid.Row="0" Grid.Column="0">
+        <Grid Name="SearchMenuItemHeader" VerticalAlignment="Center">
+            <Button
+                Visibility="Visible"
+                Height="40" Width="80"
+                x:Name="SearchButton"
+                Click="SearchButton_Click">
+                Search
+            </Button>
+            <TextBox
+                Name="SearchTextBox"
+                Visibility="Collapsed"
+                Width="230"
+                Margin="2,2,2,2">
+            </TextBox>
+        </Grid>
+        <Menu Name="SignInMenu">
+            <MenuItem Height="40" Width="48" x:Name="SignInButton">
+                <MenuItem.Header>
+                    <Label
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        Content="👤" />
+                </MenuItem.Header>
+                <MenuItem Header="Sign In"></MenuItem>
+                <MenuItem Header="Add work of school account"></MenuItem>
+            </MenuItem>
+        </Menu>
+        <Button Name="DownloadButton"
+                Height="40" Width="35"
+                Click="DownloadButton_Click">
+            <Label
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                FontSize="15"
+                Content="⤓" />
+        </Button>
+        <Menu Name="DotDotDotMenu">
+            <MenuItem Height="40" Width="35" x:Name="DotDotDot">
+                <MenuItem.Header>
+                    <Label
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        Content="..." />
+                </MenuItem.Header>
+                <MenuItem Header="Downloads and updates" Click="DownloadsAndUpdatesMenuItem_Click"></MenuItem>
+                <MenuItem Header="Settings"></MenuItem>
+                <MenuItem Header="My Library"></MenuItem>
+                <MenuItem Header="Send feedback"></MenuItem>
+            </MenuItem>
+        </Menu>
+    </StackPanel>
+</UserControl>

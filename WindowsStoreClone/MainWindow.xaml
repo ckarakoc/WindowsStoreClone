@@ -6,14 +6,16 @@
         xmlns:local="clr-namespace:WindowsStoreClone"
         xmlns:uc="clr-namespace:WindowsStoreClone.UserControls"
         xmlns:pg="clr-namespace:WindowsStoreClone.Pages"
+        xmlns:HamburgerMenuViews="clr-namespace:WindowsStoreClone.UserControls.HamburgerMenuViews"
         mc:Ignorable="d"
         Title="MainWindow" Height="800" Width="1350"
         Name="MainWindowMetro">
     <Grid>
+        <HamburgerMenuViews:AllOwned/>
         <Frame x:Name="MainFrame" Margin="5"
                Loaded="MainFrame_OnLoaded"
                NavigationUIVisibility="Hidden"
                Width="{Binding ElementName=MainWindowMetro, Path=ActualWidth}"
-               Height="{Binding ElementName=MainWindowMetro, Path=ActualHeight}" />
+               Height="{Binding ElementName=MainWindowMetro, Path=ActualHeight}" Visibility="Collapsed" />
     </Grid>
 </Window>

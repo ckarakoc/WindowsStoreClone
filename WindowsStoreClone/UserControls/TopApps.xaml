@@ -41,7 +41,7 @@
                 <RowDefinition Height="0.5*" />
                 <RowDefinition Height="0.5*" />
             </Grid.RowDefinitions>
-            <Button x:Name="TopAppsButton" FontSize="18" Grid.Row="0" Grid.Column="0" Margin="2" Content="Top Apps" />
+            <Button x:Name="TopAppsButton" FontSize="18" Grid.Row="0" Grid.Column="0" Margin="2" Content="Top Apps" Click="TopAppsButton_OnClick" />
             <Button x:Name="TopAppsButton2" FontSize="18" Grid.Row="0" Grid.Column="1" Margin="2" Content="Features" />
             <Button x:Name="TopAppsButton3" FontSize="18" Grid.Row="1" Grid.Column="0" Margin="2" Content="Top Games" />
             <Button x:Name="TopAppsButton4" FontSize="18" Grid.Row="1" Grid.Column="1" Margin="2" Content="Collections" />
@@ -49,5 +49,57 @@
         <Image Grid.Row="2" Grid.Column="2"
                VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Stretch="Fill"
                Source="/Images/TopAppIcons/85-Night castle.png" Margin="2" MouseUp="Image_OnMouseUp" />
+        <Canvas
+            Grid.Column="0" Grid.Row="0"
+            Grid.ColumnSpan="4"
+            Grid.RowSpan="3"
+            Opacity="0.4"
+            Background="#2E2E2E"
+            IsHitTestVisible="False" />
+        <Label Name="AppNameLabelTop"
+               Grid.Column="0" Grid.Row="0"
+               Grid.ColumnSpan="3"
+               Grid.RowSpan="2"
+               FontSize="25"
+               FontWeight="DemiBold"
+               Foreground="White"
+               VerticalAlignment="Bottom"
+               HorizontalContentAlignment="Center"
+               Content="Tropical" />
+        <Label Name="AppNameLabelRightTop"
+               FontWeight="DemiBold"
+               FontSize="25"
+               Foreground="White"
+               Grid.Column="3"
+               Grid.Row="0"
+               VerticalAlignment="Bottom"
+               HorizontalContentAlignment="Center"
+               Content="Circus Fun" />
+        <Label Name="AppNameLabelRightMiddle"
+               FontWeight="DemiBold"
+               FontSize="25"
+               Foreground="White"
+               Grid.Column="3"
+               Grid.Row="1"
+               VerticalAlignment="Bottom"
+               HorizontalContentAlignment="Center"
+               Content="Race Extreem" />
+        <Label Name="AppNameLabelBottomLeft"
+               FontWeight="DemiBold"
+               FontSize="25"
+               Foreground="White"
+               Grid.Column="2"
+               Grid.Row="2"
+               VerticalAlignment="Bottom"
+               HorizontalContentAlignment="Center"
+               Content="Night Castle" />
+        <Label Name="AppNameLabelBottomRight"
+               FontWeight="DemiBold"
+               FontSize="25"
+               Foreground="White"
+               Grid.Column="3" Grid.Row="2"
+               VerticalAlignment="Bottom"
+               HorizontalContentAlignment="Center"
+               Content="Chat Message" />
     </Grid>
 </UserControl>

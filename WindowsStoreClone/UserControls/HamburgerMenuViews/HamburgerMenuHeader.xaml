@@ -1,0 +1,62 @@
+﻿<UserControl x:Class="WindowsStoreClone.UserControls.HamburgerMenuViews.HamburgerMenuHeader"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:WindowsStoreClone.UserControls.HamburgerMenuViews"
+             mc:Ignorable="d"
+             d:DesignHeight="50"
+             d:DesignWidth="720">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel
+            Orientation="Horizontal"
+            Grid.Row="0">
+            <Menu Name="SortByTypeMenu"
+                  Margin="5"
+                  Width="350"
+                  HorizontalContentAlignment="Stretch">
+                <MenuItem Name="Types" Width="350">
+                    <MenuItem.Header>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.85*"></ColumnDefinition>
+                                <ColumnDefinition Width="0.15*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Label Name="FilterByTypeLabel" Grid.Column="0" HorizontalAlignment="Left">All types</Label>
+                            <Label Grid.Column="1" HorizontalAlignment="Right">﹀</Label>
+                        </Grid>
+                    </MenuItem.Header>
+                    <MenuItem Width="350" Name="AllTypesMenuItem" Click="Filter_MenuItem_Click" Header="All types" />
+                    <MenuItem Width="350" Name="AppsMenuItem" Click="Filter_MenuItem_Click" Header="Apps" />
+                    <MenuItem Width="350" Name="GamesMenuItem" Click="Filter_MenuItem_Click" Header="Games" />
+                    <MenuItem Width="350" Name="MoviesMenuItem" Click="Filter_MenuItem_Click" Header="Movies" />
+                    <MenuItem Width="350" Name="AvatarsMenuItem" Click="Filter_MenuItem_Click" Header="Avatars" />
+                </MenuItem>
+            </Menu>
+            <Menu Name="SortByDateMenu"
+                  Margin="5"
+                  Width="350"
+                  HorizontalContentAlignment="Stretch">
+                <MenuItem
+                    Name="SortBy"
+                    Width="350">
+                    <MenuItem.Header>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.85*"></ColumnDefinition>
+                                <ColumnDefinition Width="0.15*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" Name="SortByLabel" HorizontalAlignment="Left">Sort by most recent</Label>
+                            <Label Grid.Column="1" HorizontalAlignment="Right">﹀</Label>
+                        </Grid>
+                    </MenuItem.Header>
+                    <MenuItem Name="SortByMostRecent" Click="SortBy_MenuItem_Click" Width="350" Header="Sort by most recent"></MenuItem>
+                    <MenuItem Name="SortByName" Click="SortBy_MenuItem_Click" Width="350" Header="Sort by name"></MenuItem>
+                </MenuItem>
+            </Menu>
+        </StackPanel>
+    </Grid>
+</UserControl>
